@@ -56,7 +56,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
-;modules-center = mpd
+modules-center = date
 modules-right = eth
 
 ;wm-restack = bspwm
@@ -103,7 +103,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
 ;modules-center = mpd
-modules-right = filesystem alsa pulseaudio xkeyboard memory cpu eth temperature date powermenu
+modules-right = filesystem alsa pulseaudio xkeyboard memory cpu temperature date powermenu
 
 tray-position = right
 tray-padding = 2
