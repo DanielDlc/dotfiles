@@ -30,7 +30,7 @@ call plug#end()
 
 
 " ativar a cor instalada
-colorsche nightfly 
+"colorscheme nightfly
 
 set nu!
 set mouse=a
@@ -140,6 +140,12 @@ if g:nightflyTerminalColors
                     \]
     endif
 endif
+
+" início da correção do erro termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" fim da correção do erro termguicolors
+
 
 " fim da configuração
 
