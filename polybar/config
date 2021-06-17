@@ -17,15 +17,31 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
+;;background = ${xrdb:color0:#222}
+;background = #222
+;background-alt = #444
+;;foreground = ${xrdb:color7:#222}
+;foreground = #dfdfdf
+;foreground-alt = #555
+;primary = #ffb52a
+;secondary = #e60053
+;alert = #bd2c40
+
+;nova cor adicionada
+[colors]
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
 foreground-alt = #555
-primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+background = #263238
+foreground = #DFDFDF
+primary = #00BCD4
+red = #FF5250
+green = #43a047
+yellow = #fdd835
+underline = #0a6cf5
+highlight = #268BD2
+
 
 [bar/quake_left_monitor]
 monitor = DisplayPort-0
@@ -36,10 +52,10 @@ height = 27
 radius = 6.0
 fixed-center = false
 
-ackground = ${colors.background}
+background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 2
 line-color = #f00
 
 border-size = 4
@@ -48,7 +64,7 @@ border-color = #00000000
 padding-left = 0
 padding-right = 2
 
-module-margin-left = 1
+module-margin-left = 0
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
@@ -92,7 +108,7 @@ fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 2
 line-color = #f00
 
 border-size = 4
@@ -106,15 +122,11 @@ module-margin-left = 0
 ;module-margin-right = 2
 module-margin-right = 2
 
-
-
 ; novas fontes adicionadas
 font-0 = JetBrainsMonoMedium:pixelsize=10;
 font-1 = HackRegularNerdFont:pixelsize=10;
 font-2 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
 font-3 = IPAGothic:fontformat=truetype:pixelsize=10:antialias=false;
-
-; fontes antigas utilizadas
 font-4 = fixed:pixelsize=10;1
 font-5 = HackNerdFont:pixelsize=10;
 font-6 = siji:pixelsize=10;1
