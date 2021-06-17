@@ -54,8 +54,6 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
-
-; novas fontes adicionadas
 font-3 = JetBrainsMonoMedium:pixelsize=10;
 font-4 = HackRegularNerdFont:pixelsize=10;
 font-5 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=false;
@@ -63,7 +61,10 @@ font-6 = IPAGothic:fontformat=truetype:pixelsize=10:antialias=false
 
 modules-left = bspwm
 modules-center = date
-modules-right = eth
+modules-right = calendar
+
+tray-position = right
+tray-padding = 2
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -321,6 +322,15 @@ type = internal/xbacklight
 format = <label> <bar>
 label = BL
 
+; informações adicionadas
+;output = HDMI-A-0
+;ramp-0 = 🌕
+;ramp-1 = 🌔
+;ramp-2 = 🌓
+;ramp-3 = 🌒
+;ramp-4 = 🌑
+; fim das informações adicionais
+
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = #fff
@@ -469,6 +479,33 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
+; adicionado módulo volume
+
+[module/volume]
+type = internal/pulseaudio
+
+format-volume = <label-volume> <bar-volume>
+label-volume = 
+label-volume-foreground = ${colors.volume}
+
+format-muted-suffix = "  "
+format-muted-foreground = ${colors.volume}
+label-muted = " Som Mudo"
+format-muted-underline = ${colors.volume}
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.volume}
+
+bar-volume-gradient = false
+bar-volume-indicator =
+bar-volume-indicator-font = 0
+bar-volume-fill = ""
+bar-volume-fill-font = 1
+bar-volume-empty = ""
+bar-volume-empty-font = 1
+bar-volume-empty-foreground = ${colors.empty}
+
+; fim do módulo volume
 ;[module/battery]
 ;type = internal/battery
 ;battery = BAT0
@@ -522,6 +559,26 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
+
+; iniciando módulo calendário
+
+[module/calendar]
+type = custom/script
+exec = "date +%d-%m-%Y"
+interval = 30
+
+format = " <label>"
+;format-underline = ${colors.calendar}
+;format-suffix = "  "
+format-suffix = " 🗓️ "
+format-suffix-foreground = ${self.format-underline}
+format-foreground = ${colors.foreground}
+format-underline = #4bffdc
+
+click-left = gsimplecal &
+#click-left = notify-send "$(cal)"
+
+; fim do módulo calendário
 
 [module/powermenu]
 type = custom/menu
