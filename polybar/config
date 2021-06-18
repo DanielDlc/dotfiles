@@ -621,8 +621,17 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
+; linhas de format adicionadas.
 [settings]
 screenchange-reload = true
+format-foreground = 
+format-underline = #4bffdc
+format-background = ${colors.background-alt}
+format-padding = 1
+format-override = 
+format-spacing =
+format-margin = 0
+format-offset =
 ;compositing-background = xor
 ;compositing-background = screen
 ;compositing-foreground = source
