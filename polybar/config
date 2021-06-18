@@ -41,7 +41,7 @@ green = #43a047
 yellow = #fdd835
 underline = #0a6cf5
 highlight = #268BD2
-
+uptime = #9B78F1
 
 [bar/quake_left_monitor]
 monitor = DisplayPort-0
@@ -133,7 +133,7 @@ font-6 = siji:pixelsize=10;1
 
 modules-left = bspwm
 ;modules-center = mpd
-modules-right = alsa pulseaudio filesystem xkeyboard  memory cpu temperature date powermenu
+modules-right = alsa pulseaudio filesystem xkeyboard  memory cpu temperature date uptime powermenu
 
 ;tray-position = right
 ;tray-padding = 2
@@ -370,13 +370,15 @@ format-underline = #4bffdc
 label = %percentage:2%%
 
 [module/memory]
-type = internal/memory
+;type = internal/memory
+type = custom/script
+exec = ~/.config/Scripts/memory.sh
 interval = 2
 ;format-prefix = " "
 format-prefix = "🧠 "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label = %percentage_used%%
+;label = %percentage_used%%
 
 ;[module/wlan]
 ;type = internal/network
@@ -443,7 +445,8 @@ format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+;label-muted = 🔇 muted
+label-muted = 🎧 muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -472,7 +475,8 @@ label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+;label-muted = sound muted
+label-muted = 🔇 muted
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -624,11 +628,11 @@ menu-2-1-exec = menu-open-0
 ; linhas de format adicionadas.
 [settings]
 screenchange-reload = true
-format-foreground = 
+format-foreground =
 format-underline = #4bffdc
 format-background = ${colors.background-alt}
 format-padding = 1
-format-override = 
+format-override =
 format-spacing =
 format-margin = 0
 format-offset =
@@ -637,6 +641,28 @@ format-offset =
 ;compositing-foreground = source
 ;compositing-border = over
 ;pseudo-transparency = false
+
+;[module/uptime]
+;type = custom/script
+;interval = 30
+;exec = ~/.config/Scripts/uptime.sh
+;label = %output%
+;format = <label>
+;format-suffix = " ⏲️ "
+;;format-suffix = " ⏳ "
+;format-suffix-foreground =  ${colors.uptime}
+;;format-underline =  ${colors.uptime}
+;format-underline = #4bffdc
+
+[module/uptime]
+type = custom/script
+interval = 5
+exec = ~/.config/Scripts/uptime.sh
+;format-prefix = " "
+format-prefix = "👨️"
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+;label = %percentage_used%%
 
 [global/wm]
 margin-top = 5
