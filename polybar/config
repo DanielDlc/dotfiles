@@ -129,7 +129,7 @@ font-6 = siji:pixelsize=10;1
 
 modules-left = bspwm
 ;modules-center = mpd
-modules-right = filesystem alsa pulseaudio packages xkeyboard  memory cpu temperature date uptime powermenu
+modules-right = filesystem alsa pulseaudio packages xkeyboard  memory cpuGhz cpu temperature date uptime powermenu
 
 ;tray-position = right
 ;tray-padding = 2
@@ -679,6 +679,13 @@ format-prefix = "📦 "
 format-underline = #4bffdc
 ;click-left = sudo pacman -Syyu
 initial = 1
+
+[module/cpuGhz]
+type = custom/script
+exec = ~/.config/Scripts/cpuGhz.sh
+format-prefix = "🚬 "
+;format-underline = #4bffd
+interval = 10
 
 [global/wm]
 margin-top = 5
