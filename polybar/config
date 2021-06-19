@@ -440,6 +440,12 @@ format-volume = "🎧 "
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
+tail = true
+click-right = exec pavucontrol &
+click-left = ~/polybar-scripts/pulseaudio-tail.sh --mute &
+scroll-up = ~/polybar-scripts/pulseaudio-tail.sh --up &
+scroll-down = ~/polybar-scripts/pulseaudio-tail.sh --down &
+
 ;label-muted = 🔇 muted
 label-muted = 🔇 muted
 label-muted-foreground = #666
@@ -473,6 +479,11 @@ format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
 ;label-muted = sound muted
 label-muted = 🔇 muted
+tail = true
+click-right = exec pavucontrol &
+click-left = ~/polybar-scripts/pulseaudio-tail.sh --mute &
+scroll-up = ~/polybar-scripts/pulseaudio-tail.sh --up &
+scroll-down = ~/polybar-scripts/pulseaudio-tail.sh --down &
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
