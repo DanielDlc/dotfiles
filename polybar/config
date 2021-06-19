@@ -17,31 +17,27 @@
 ;==========================================================
 
 [colors]
-;;background = ${xrdb:color0:#222}
-;background = #222
-;background-alt = #444
-;;foreground = ${xrdb:color7:#222}
-;foreground = #dfdfdf
-;foreground-alt = #555
-;primary = #ffb52a
-;secondary = #e60053
-;alert = #bd2c40
-
-;nova cor adicionada
-[colors]
-background-alt = #444
-foreground-alt = #555
-secondary = #e60053
-alert = #bd2c40
 background = #263238
+background-alt = #002442
 foreground = #DFDFDF
+foreground-alt = #555
+alert = #bd2c40
 primary = #00BCD4
+secondary = #e60053
 red = #FF5250
 green = #43a047
 yellow = #fdd835
 underline = #0a6cf5
 highlight = #268BD2
 uptime = #9B78F1
+;background = ${xrdb:background}
+;background-alt = #444
+;background-alt = ${xrdb:color0}
+;foreground = ${xrdb:foreground}
+;foreground-alt = ${xrdb:color7}
+;alert = ${xrdb:color1}
+;primary = ${xrdb:color4}
+;secondary = #00FFFF
 
 [bar/quake_left_monitor]
 monitor = DisplayPort-0
@@ -133,7 +129,7 @@ font-6 = siji:pixelsize=10;1
 
 modules-left = bspwm
 ;modules-center = mpd
-modules-right = alsa pulseaudio filesystem xkeyboard  memory cpu temperature date uptime powermenu
+modules-right = filesystem alsa pulseaudio packages xkeyboard  memory cpu temperature date uptime powermenu
 
 ;tray-position = right
 ;tray-padding = 2
@@ -162,8 +158,9 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 ;format-prefix = " "
+;format-prefix = "⌨️ "
 format-prefix = "⌨️ "
-format-prefix-foreground = ${colors.foreground-alt}
+;format-prefix-foreground = ${colors.foreground-alt}
 ;format-prefix-underline = ${colors.secondary}
 format-prefix-underline = #4bffdc
 
@@ -179,16 +176,13 @@ label-indicator-underline = ${colors.secondary}
 [module/filesystem]
 type = internal/fs
 interval = 25
-
 mount-0 = /
-
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-;label-layout-underline = #4bffdc
-
-;format-prefix = " "
-format-prefixforeground = ${colors.foreground-alt}
+label-layout-underline = #4bffdc
+format-prefix = "💻 "
+;format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = #4bffdc
 
 ;[module/bspwm]
@@ -441,12 +435,13 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
+;format-volume = <label-volume> <bar-volume>
+format-volume = "🎧 "
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
 ;label-muted = 🔇 muted
-label-muted = 🎧 muted
+label-muted = 🔇 muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -469,7 +464,8 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/alsa]
 type = internal/alsa
 
-format-volume = <label-volume> <bar-volume>
+;format-volume = <label-volume> <bar-volume>
+format-volume = "🔉 "
 label-volume = VOL
 label-volume-foreground = ${root.foreground}
 
@@ -520,8 +516,8 @@ bar-volume-fill-font = 1
 bar-volume-empty = ""
 bar-volume-empty-font = 1
 bar-volume-empty-foreground = ${colors.empty}
-
 ; fim do módulo volume
+
 ;[module/battery]
 ;type = internal/battery
 ;battery = BAT0
@@ -659,10 +655,19 @@ type = custom/script
 interval = 5
 exec = ~/.config/Scripts/uptime.sh
 ;format-prefix = " "
-format-prefix = "👨️"
+format-prefix = "👨️ "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 ;label = %percentage_used%%
+
+[module/packages]
+type = custom/script
+exec = ~/.config/Scripts/packages.sh
+format-prefix = "📦 "
+;format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+;click-left = sudo pacman -Syyu
+initial = 1
 
 [global/wm]
 margin-top = 5
