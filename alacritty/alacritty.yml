@@ -1,7 +1,7 @@
 draw_bold_text_with_bright_colors: true
 
 # fundo transparnte
-background_opacity: 0.95
+background_opacity: 0.97
 
 # tamanho da fonte
 font:
@@ -12,7 +12,8 @@ font:
 colors:
   # Default colors
   primary:
-    background:        '#011627'
+    # background:        '#011627'
+    background:        '#001b2a'
     foreground:        '#acb4c2'
     bright_foreground: '#eeeeee'
 
