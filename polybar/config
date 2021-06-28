@@ -17,16 +17,16 @@
 ;==========================================================
 
 [colors]
-background = #263238
+background = #3C39B8
 background-alt = #002442
 foreground = #DFDFDF
 foreground-alt = #555
-alert = #bd2c40
+alert = #7c8f8f 
 primary = #00BCD4
-secondary = #e60053
-red = #FF5250
-green = #43a047
-yellow = #fdd835
+secondary = #ff5874
+red = #fc514e
+green = #a1cd5e
+yellow = #e3d18a
 underline = #0a6cf5
 highlight = #268BD2
 uptime = #9B78F1
@@ -78,9 +78,9 @@ modules-left = bspwm
 modules-center = date
 modules-right = xkeyboard
 
-;tray-position = right
-;tray-padding = 2
-;tray-background = #0063ff
+tray-position = right
+tray-padding = 2
+tray-background = #0063ff
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -109,7 +109,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 2
-line-color = #f00
+line-color = #1d3b53
 
 border-size = 4
 border-color = #00000000
@@ -144,8 +144,8 @@ modules-right = filesystem alsa pulseaudio packages memory cpuGhz cpu temperatur
 
 ;override-redirect = true
 
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
@@ -228,23 +228,21 @@ enable-click = true
 enable-scroll = false
 reverse-scroll = false
 fuzzy-match = false
-; ws-icon-[0-9]+ = label;icon
-; Note that the label needs to correspond with the bspwm workspace name
-ws-icon-0 = I;
-ws-icon-1 = II;
-ws-icon-2 = III;
-ws-icon-3 = IV;
-ws-icon-4 = V;
-ws-icon-5 = VI;
-ws-icon-6 = VII;
+
+ws-icon-0 = I;♚
+ws-icon-1 = II;♚
+ws-icon-2 = III;♛
+ws-icon-3 = IV;♜
+ws-icon-4 = V;♝
+ws-icon-5 = VI;♞
+ws-icon-6 = VII;♟
 ws-icon-7 = VIII;
 ws-icon-8 = IX;
 ws-icon-9 = X;
-;ws-icon-default = ♟
+
 format = <label-state> <label-mode>
 label-monitor = %name%
 label-mode-padding = 1
-label-focused = %icon% %name%
 label-focused-padding = 1
 label-occupied = %icon% %name%
 label-occupied-padding = 1
@@ -252,16 +250,17 @@ label-urgent = %icon% %name%
 label-urgent-padding = 1
 label-empty = %icon% %name%
 label-empty-padding = 1
-;label-dimmed-foreground = ${colors.purple}
-;label-dimmed-underline = ${colors.purple}
-;label-dimmed-focused-background = ${colors.purple}
-;label-focused-foreground = ${colors.blue}
-;label-focused-underline = ${colors.blue}
-;label-occupied-underline = ${colors.purple}
-;label-urgent-foreground = ${colors.urgent}
-;label-urgent-underline = ${colors.urgent}
-; The following labels will be used to indicate the layout/mode
-; for the focused workspace. Requires <label-mode>
+label-dimmed-foreground = #555
+label-dimmed-underline = #7fdbca
+
+; cor do fundo dos ícones 
+label-dimmed-focused-background = #1d3b53
+label-focused = %icon%
+label-focused-foreground = #ffffff
+label-focused-background = #3f3f3f
+
+; cor da linha selecionada no canto superior esquerdo
+label-focused-underline = #21c7a8
 label-monocle =
 label-tiled =
 label-fullscreen =
@@ -270,10 +269,6 @@ label-pseudotiled = P
 label-locked =
 label-sticky =
 label-private =
-;label-sticky-foreground = ${colors.purple}
-;label-locked-foreground = ${colors.moderate}
-;label-private-foreground = ${colors.urgent}
-;fim da configuração teste dois monitores
 
 [module/i3]
 type = internal/i3
