@@ -21,7 +21,7 @@ background = #3C39B8
 background-alt = #002442
 foreground = #DFDFDF
 foreground-alt = #555
-alert = #7c8f8f 
+alert = #7c8f8f
 primary = #00BCD4
 secondary = #ff5874
 red = #fc514e
@@ -75,8 +75,8 @@ font-5 = HackNerdFont:pixelsize=10;
 font-6 = siji:pixelsize=10;1
 
 modules-left = bspwm
-modules-center = date
-modules-right = xkeyboard
+modules-center = calendar
+modules-right = eth
 
 tray-position = right
 tray-padding = 2
@@ -133,7 +133,7 @@ font-6 = siji:pixelsize=10;1
 
 modules-left = bspwm
 ;modules-center = mpd
-modules-right = filesystem alsa pulseaudio packages memory cpuGhz cpu temperature date uptime powermenu
+modules-right = uptime xkeyboard filesystem alsa pulseaudio packages memory cpuGhz cpu temperature date powermenu
 
 ;tray-position = right
 ;tray-padding = 2
@@ -166,11 +166,11 @@ blacklist-0 = num lock
 format-prefix = "⌨️ "
 ;format-prefix-foreground = ${colors.foreground-alt}
 ;format-prefix-underline = ${colors.secondary}
-format-prefix-underline = #4bffdc
+format-prefix-underline = #2222ff
 
 label-layout = %layout%
 ;label-layout-underline = ${colors.secondary}
-label-layout-underline = #4bffdc
+label-layout-underline = #2222ff
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -181,13 +181,13 @@ label-indicator-underline = ${colors.secondary}
 type = internal/fs
 interval = 25
 mount-0 = /
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = 📁 %mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-label-layout-underline = #4bffdc
+label-layout-underline = #2222ff
 format-prefix = "💻 "
 ;format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = #4bffdc
+format-prefix-underline = #2222ff
 
 ;[module/bspwm]
 ;type = internal/bspwm
@@ -253,14 +253,15 @@ label-empty-padding = 1
 label-dimmed-foreground = #555
 label-dimmed-underline = #7fdbca
 
-; cor do fundo dos ícones 
+; cor do fundo dos ícones
 label-dimmed-focused-background = #1d3b53
 label-focused = %icon%
 label-focused-foreground = #ffffff
 label-focused-background = #3f3f3f
 
 ; cor da linha selecionada no canto superior esquerdo
-label-focused-underline = #21c7a8
+;label-focused-underline = #21c7a8 old
+label-focused-underline = #2222ff
 label-monocle =
 label-tiled =
 label-fullscreen =
@@ -356,10 +357,12 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 ;format-prefix = " "
-format-prefix="🔥 "
+;format-prefix="🔥 "
+format-prefix="💻 "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
-format-underline = #4bffdc
+;format-underline = #2222ff old
+format-underline = #2222ff
 label = %percentage:2%%
 
 [module/memory]
@@ -370,7 +373,7 @@ interval = 2
 ;format-prefix = " "
 format-prefix = "🧠 "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = #2222ff
 ;label = %percentage_used%%
 
 ;[module/wlan]
@@ -401,7 +404,7 @@ interface = eno1
 interval = 3.0
 
 ;format-connected-underline = #55aa55
-format-connected-underline = #4bffdc
+format-connected-underline = #2222ff
 ;format-connected-prefix = " "
 format-connected-prefix = "🖥️ "
 format-connected-prefix-foreground = ${colors.foreground-alt}
@@ -427,7 +430,7 @@ time-alt = %H:%M:%S
 format-prefix = "🕔 "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
-format-underline = #4bffdc
+format-underline = #2222ff
 
 label = %date% %time%
 
@@ -435,8 +438,8 @@ label = %date% %time%
 type = internal/pulseaudio
 
 ;format-volume = <label-volume> <bar-volume>
-format-volume = "🎧 "
-label-volume = VOL %percentage%%
+format-volume = <label-volume> 🎧 
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
 tail = true
@@ -470,8 +473,8 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/alsa
 
 ;format-volume = <label-volume> <bar-volume>
-format-volume = "🔉 "
-label-volume = VOL
+format-volume =<label-volume> 🔉 
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
@@ -569,7 +572,7 @@ warn-temperature = 60
 format = <ramp> <label>
 format-prefix = "🌡️ "
 ;format-underline = #f50a4d
-format-underline = #4bffdc
+format-underline = #2222ff
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
@@ -595,7 +598,7 @@ format = " <label>"
 format-suffix =
 format-suffix-foreground = ${self.format-underline}
 format-foreground = ${colors.foreground}
-format-underline = #4bffdc
+format-underline = #2222ff
 
 click-left = gsimplecal &
 #click-left = notify-send "$(cal)"
@@ -635,7 +638,7 @@ menu-2-1-exec = menu-open-0
 [settings]
 screenchange-reload = true
 format-foreground =
-format-underline = #4bffdc
+format-underline = #2222ff
 format-background = ${colors.background-alt}
 format-padding = 1
 format-override =
@@ -658,16 +661,17 @@ format-offset =
 ;;format-suffix = " ⏳ "
 ;format-suffix-foreground =  ${colors.uptime}
 ;;format-underline =  ${colors.uptime}
-;format-underline = #4bffdc
+;format-underline = #2222ff
 
 [module/uptime]
 type = custom/script
 interval = 5
 exec = ~/.config/Scripts/uptime.sh
 ;format-prefix = " "
-format-prefix = "👨️ "
+;format-prefix = "👨️ "
+format-prefix = "⌛"
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = #2222ff
 ;label = %percentage_used%%
 
 [module/packages]
@@ -675,14 +679,15 @@ type = custom/script
 exec = ~/.config/Scripts/packages.sh
 format-prefix = "📦 "
 ;format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = #2222ff
 ;click-left = sudo pacman -Syyu
 initial = 1
 
 [module/cpuGhz]
 type = custom/script
 exec = ~/.config/Scripts/cpuGhz.sh
-format-prefix = "🚬 "
+;format-prefix = "🚬 "
+format-prefix = "🫀 "
 ;format-underline = #4bffd
 interval = 10
 
