@@ -2,6 +2,10 @@
 # ~/.bashrc
 #
 
+# PATH
+export PATH="${PATH}:/home/danieldlc/.local/bin"
+#export PATH="${PATH}/home/danieldlc/.local/lib/python3.9/site-packages
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
