@@ -369,7 +369,7 @@ label = %percentage:2%%
 ;type = internal/memory
 type = custom/script
 exec = ~/.config/Scripts/memory.sh
-interval = 2
+interval = 2 
 ;format-prefix = " "
 format-prefix = "🧠 "
 format-prefix-foreground = ${colors.foreground-alt}
@@ -690,6 +690,13 @@ exec = ~/.config/Scripts/cpuGhz.sh
 format-prefix = "🫀 "
 ;format-underline = #4bffd
 interval = 10
+
+;[module/torrents]
+;type = custom/script
+;exec = echo 📥
+;click-left = $TERMINAL -e tremc &
+;click-right = notifytorrents
+;interval = 0
 
 [global/wm]
 margin-top = 5
