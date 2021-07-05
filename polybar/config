@@ -580,9 +580,14 @@ label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+;ramp-0 = 
+;ramp-1 = 
+;ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
+
 ramp-foreground = ${colors.foreground-alt}
 
 ; iniciando módulo calendário
@@ -612,9 +617,11 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+;label-open = 
+label-open = "🧨"
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close = cancel
+;label-close = "🧨"
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
