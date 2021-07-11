@@ -26,6 +26,22 @@ super + i
 super + e 
  	nautilus
 
+
+# não funciona INICIA AQUI
+# flameshot
+super + print
+	flameshot
+
+
+# próximo desktop
+super + Up
+    desknext
+
+# desktop anterior
+super + Down
+    deskprev
+# não funciona TERMINA AQUI
+
 #
 # bspwm hotkeys
 #
