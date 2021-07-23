@@ -2,6 +2,10 @@
 # wm independent hotkeys
 #
 
+super + {Left,Right}
+    bspc desktop -f {prev,next}.local
+
+
 # terminal emulator
 super + Return
 	alacritty
