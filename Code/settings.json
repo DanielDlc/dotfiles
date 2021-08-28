@@ -1,0 +1,40 @@
+{
+    "window.zoomLevel": 1,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.iconTheme": "vscode-icons",
+     
+    //Formatar com Black automáticamente
+    //"python.formatting.provider": "black",
+    //"python.formatting.blackPath": "/home/danieldlc/.local/bin/black",
+    //"python.formatting.blackArgs": ["--line-length", "88"],
+    "[python]": {
+        "editor.formatOnSave": true,
+    //"editor.rulers": [
+    //    79,
+    //],
+    
+    },
+    "workbench.colorTheme": "Mayukai Alucard",
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "autopep8",
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+    "cSpell.language": "en,pt,pt_BR",
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "git.autofetch": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+
+
+
+    
+}
+
