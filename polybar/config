@@ -1,4 +1,4 @@
-;==========================================================
+;=========================================================
 ;
 ;
 ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
@@ -12,7 +12,7 @@
 ;   To learn more about how to configure Polybar
 ;   go to https://github.com/polybar/polybar
 ;
-;   DanielDlc
+;   DanielDlc 🥷🥷🏽  🧛 👨 
 ;   email: dlc.engcomputacao@gmail.com
 ;==========================================================
 
@@ -145,7 +145,7 @@ modules-right = uptime xkeyboard filesystem alsa pulseaudio packages memory cpuG
 ;override-redirect = true
 
 scroll-up = bspwm-desknext
-scroll-down = bspwm-deskprev
+scroll-down = bspwm-deskprev 
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
@@ -618,7 +618,8 @@ expand-right = true
 format-spacing = 1
 
 ;label-open = 
-label-open = "🧨"
+;label-open = "🧨"
+label-open ="🧛"
 label-open-foreground = ${colors.secondary}
 label-close = cancel
 ;label-close = "🧨"
@@ -634,10 +635,10 @@ menu-0-1-exec = menu-open-2
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+menu-1-1-exec = reboot
 
 menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
+menu-2-0-exec =  poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
@@ -688,6 +689,7 @@ format-prefix = "📦 "
 ;format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #2222ff
 ;click-left = sudo pacman -Syyu
+click-right = pacman -Qu &
 initial = 1
 
 [module/cpuGhz]
@@ -706,7 +708,7 @@ interval = 10
 ;interval = 0
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 2
+margin-bottom = 2
 
 ; vim:ft=dosini
